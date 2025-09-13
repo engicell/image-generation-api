@@ -77,13 +77,15 @@ This project lets you deploy your own **free AI image generation API** using Clo
 ## 🎯 Usage
 
 ### 🖥️ cURL Example
-```bash
+
 Example 1: Exact size (16:9, 1920×1080)
+```bash
 curl -X POST https://<your-worker-name>.<your-subdomain>.workers.dev \
   -H "Authorization: Bearer your-secret-api-key" \
   -H "Content-Type: application/json" \
   -d '{"prompt":"A cute robot cooking breakfast","width":1920,"height":1080}' \
   --output image.png
+```
 
 Example 2: Aspect ratio only (auto 16:9 around 1024px wide)
 curl -X POST https://<your-worker-name>.<your-subdomain>.workers.dev \
@@ -104,7 +106,7 @@ curl -X POST https://<your-worker-name>.<your-subdomain>.workers.dev \
 
 
 👉 This will output ~1920×1080 without having to specify both dimensions manually.
-```
+
 
 
 ## 📝 Notes
