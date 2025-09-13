@@ -88,22 +88,24 @@ curl -X POST https://<your-worker-name>.<your-subdomain>.workers.dev \
 ```
 
 Example 2: Aspect ratio only (auto 16:9 around 1024px wide)
+```bash
 curl -X POST https://<your-worker-name>.<your-subdomain>.workers.dev \
   -H "Authorization: Bearer your-secret-api-key" \
   -H "Content-Type: application/json" \
   -d '{"prompt":"A cute robot cooking breakfast","aspectRatio":"16:9"}' \
   --output image.png
-
+```
 
 👉 This will pick ~1024×576 automatically (since the “long edge” defaults to 1024).
 
 Example 3: Aspect ratio + larger size
+```bash
 curl -X POST https://<your-worker-name>.<your-subdomain>.workers.dev \
   -H "Authorization: Bearer your-secret-api-key" \
   -H "Content-Type: application/json" \
   -d '{"prompt":"A cute robot cooking breakfast","aspectRatio":"16:9","longEdge":1920}' \
   --output image.png
-
+```
 
 👉 This will output ~1920×1080 without having to specify both dimensions manually.
 
