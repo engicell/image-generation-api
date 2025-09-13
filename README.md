@@ -78,37 +78,21 @@ This project lets you deploy your own **free AI image generation API** using Clo
 
 ### 🖥️ cURL Example
 
-Example 1: Exact size (16:9, 1920×1080)
+Example : Exact size (16:9, 1920×1080)
 ```bash
-curl -X POST https://<your-worker-name>.<your-subdomain>.workers.dev \
-  -H "Authorization: Bearer your-secret-api-key" \
+curl -X POST https://<worker>.<subdomain>.workers.dev \
+  -H "Authorization: Bearer <API_KEY>" \
   -H "Content-Type: application/json" \
-  -d '{"prompt":"A cute robot cooking breakfast","width":1920,"height":1080}' \
+  -d '{"prompt":"city skyline at dusk","width":1920,"height":1080}' \
   --output image.png
 ```
 
-Example 2: Aspect ratio only (auto 16:9 around 1024px wide)
+Aspect ratio only (auto ~1024 long edge):
 ```bash
-curl -X POST https://<your-worker-name>.<your-subdomain>.workers.dev \
-  -H "Authorization: Bearer your-secret-api-key" \
-  -H "Content-Type: application/json" \
-  -d '{"prompt":"A cute robot cooking breakfast","aspectRatio":"16:9"}' \
-  --output image.png
+-d '{"prompt":"widescreen landscape","aspectRatio":"16:9"}'
 ```
 
 👉 This will pick ~1024×576 automatically (since the “long edge” defaults to 1024).
-
-Example 3: Aspect ratio + larger size
-```bash
-curl -X POST https://<your-worker-name>.<your-subdomain>.workers.dev \
-  -H "Authorization: Bearer your-secret-api-key" \
-  -H "Content-Type: application/json" \
-  -d '{"prompt":"A cute robot cooking breakfast","aspectRatio":"16:9","longEdge":1920}' \
-  --output image.png
-```
-
-👉 This will output ~1920×1080 without having to specify both dimensions manually.
-
 
 
 ## 📝 Notes
